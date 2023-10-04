@@ -82,9 +82,9 @@
     {
       "mark": {
         "type": "text",
-        "align": "right",
-        "baseline": "middle",
-        "dx": -12,
+        "align": "center",
+        "baseline": "bottom",
+        "dx": -5,
         "fontSize": 11.5,
         "fontStyle": "italic"
       },
@@ -93,7 +93,7 @@
         "color": {"value": "black"},
         "opacity": {
           "condition": {
-            "test": "datum['Country Name'] == 'China' || datum['Country Name'] == 'Vietnam' || datum['Country Name'] == 'Australia' || datum['Country Name'] == 'New Zealand' ||  datum['Country Name'] == 'United States'",
+            "test": "datum['Country Name'] == 'Afghanistan' || datum['Country Name'] == 'Singapore' || datum['Country Name'] == 'Chad' || datum['Country Name'] == 'United States'",
             "value": 1
           },
           "value": 0
