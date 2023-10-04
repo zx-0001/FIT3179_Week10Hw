@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 400,
+  "title": "Correlation between health expediture (% of GDP) and life expectancy",
+  "data": {
+    "url": "../data/life expectancy.csv"
+  },
+  "layer": [
+    {
+      "transform": [
+        { "filter": "datum['Year'] == 2019" },
+        { "filter": "datum['Life Expectancy World Bank'] > 0" }
+      ],
+      "selection": {
+        "region_highlight": {
+          "type": "multi",
+          "fields": ["Region"],
+          "bind": "legend"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "x": {
+          "field": "Health Expenditure %",
+          "type": "quantitative",
+          "title": "Health Expenditure (% of GDP)"
+        },
+        "y": {
+          "field": "Life Expectancy World Bank",
+          "type": "quantitative",
+          "title": "Life Expectancy"
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "South Asia",
+              "East Asia & Pacific",
+              "Europe & Central Asia",
+              "Sub-Saharan Africa",
+              "Middle East & North Africa",
+              "Latin America & Caribbean",
+              "North America"
+            ],
+            "range": [
+              "#1b9e77",
+              "#d95f02",
+              "#7570b3",
+              "#e7298a",
+              "#66a61e",
+              "#e6ab02",
+              "#a6761d"
+            ]
+          }
+        },
+        "opacity": {
+          "condition": { "selection": "region_highlight", "value": 1 },
+          "value": 0.1
+        },
+        "tooltip": [
+          { "field": "Country Name", "type": "nominal" },
+          { "field": "Region", "type": "nominal" },
+          { "field": "Year", "type": "quantitative" },
+          {
+            "field": "Health Expenditure %",
+            "type": "quantitative",
+            "format": ","
+          },
+          {
+            "field": "Life Expectancy World Bank",
+            "type": "quantitative",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ]
+}
