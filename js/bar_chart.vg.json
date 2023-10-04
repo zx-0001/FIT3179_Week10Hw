@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text": "Unemployment % by regions (2019)" },
+  "data": {
+    "url": "../data/life expectancy.csv"
+  },
+  "transform": [
+    { "filter": "datum['Year'] == 2019" },
+    { "filter": "datum['Unemployment'] > 0" }
+  ],
+  "mark": "bar",
+  "encoding": {
+    "x": { "aggregate":"sum", "field": "Unemployment", "type": "quantitative" },
+    "y": { "field": "Country Name", "type": "nominal", "sort":"-x" }
+  }
+}
