@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": { "text": "Average unemployment % by regions (2019)" },
   "data": {
-    "url": "../data/life expectancy.csv"
+    "url": "https://raw.githubusercontent.com/zx-0001/FIT3179_Week10Hw/main/data/life%20expectancy.csv"
   },
   "transform": [
     { "filter": "datum['Year'] == 2019" },

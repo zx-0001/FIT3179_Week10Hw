@@ -4,7 +4,7 @@
   "height": 400,
   "title": "Correlation between health expediture (% of GDP) and life expectancy",
   "data": {
-    "url": "../data/life expectancy.csv"
+    "url": "https://raw.githubusercontent.com/zx-0001/FIT3179_Week10Hw/main/data/life%20expectancy.csv"
   },
   "transform": [
     { "filter": "datum['Year'] == 2019" },
